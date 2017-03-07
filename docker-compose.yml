@@ -1,0 +1,15 @@
+version: '3.0'
+services:
+  grid-hub:
+    container_name: 'grid-hub'
+    image: 'selenium/hub'
+    ports:
+      - '4444:4444'
+  node-chrome-debug:
+    image: 'selenium/node-chrome-debug'
+    depends_on:
+      - 'grid-hub'
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=grid-hub
+      - HUB_PORT_4444_TCP_PORT=4444
+      - no_proxy=""
