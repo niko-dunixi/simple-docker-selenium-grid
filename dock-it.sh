@@ -5,9 +5,7 @@ time (
   docker-compose stop;
   docker-compose rm -f;
 )
-# Pull up our docker lamp... Is this actually just damp?
 time docker-compose up -d #--build
-docker-compose scale node-chrome=0 node-firefox=0
 echo ""
 echo "Your local grid is up. You can view the following with default password: 'secret' "
 echo "- Hub      http://localhost:4444/grid/console"
