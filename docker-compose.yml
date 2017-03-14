@@ -5,6 +5,22 @@ services:
     image: 'selenium/hub'
     ports:
       - '4444:4444'
+  node-chrome:
+    image: 'selenium/node-chrome'
+    depends_on:
+      - 'grid-hub'
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=grid-hub
+      - HUB_PORT_4444_TCP_PORT=4444
+      - no_proxy=""
+  node-firefox:
+    image: 'selenium/node-firefox'
+    depends_on:
+      - 'grid-hub'
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=grid-hub
+      - HUB_PORT_4444_TCP_PORT=4444
+      - no_proxy=""
   node-chrome-debug:
     image: 'selenium/node-chrome-debug'
     depends_on:
