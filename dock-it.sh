@@ -7,12 +7,12 @@ time (
 )
 # Pull up our docker lamp... Is this actually just damp?
 time docker-compose up -d #--build
-
+docker-compose scale node-chrome=0 node-firefox=0
 echo ""
 echo "Your local grid is up. You can view the following with default password: 'secret' "
-echo "  Hub      http://localhost:4444/grid/console"
-echo "  chrome   vnc://localhost:5900"
-echo "  firefox  vnc://localhost:5901"
+echo "- Hub      http://localhost:4444/grid/console"
+echo "- chrome   vnc://localhost:5900"
+echo "- firefox  vnc://localhost:5901"
 echo ""
 echo "To use in the automation, your local properties need to include:"
-echo "  automation.browser.grid-url=http://localhost:4444/wd/hub/"
+echo "- automation.browser.grid-url=http://localhost:4444/wd/hub/"
