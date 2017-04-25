@@ -41,3 +41,11 @@ services:
       - no_proxy=""
     ports:
       - '5901:5900'
+  node-phantomjs:
+    image: 'selenium/node-phantomjs:3.4.0'
+    depends_on:
+      - 'grid-hub'
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=grid-hub
+      - HUB_PORT_4444_TCP_PORT="4444/grid/register"
+      - no_proxy=""
