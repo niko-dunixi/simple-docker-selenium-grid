@@ -47,5 +47,5 @@ services:
       - 'grid-hub'
     environment:
       - HUB_PORT_4444_TCP_ADDR=grid-hub
-      - HUB_PORT_4444_TCP_PORT="4444/grid/register"
+      - HUB_PORT_4444_TCP_PORT=4444
       - no_proxy=""
