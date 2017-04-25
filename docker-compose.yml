@@ -2,11 +2,11 @@ version: '3.0'
 services:
   grid-hub:
     container_name: 'grid-hub'
-    image: 'selenium/hub:3.1.0'
+    image: 'selenium/hub:3.4.0'
     ports:
       - '4444:4444'
   node-chrome:
-    image: 'selenium/node-chrome:3.1.0'
+    image: 'selenium/node-chrome:3.4.0'
     depends_on:
       - 'grid-hub'
     environment:
@@ -14,7 +14,7 @@ services:
       - HUB_PORT_4444_TCP_PORT=4444
       - no_proxy=""
   node-firefox:
-    image: 'selenium/node-firefox:3.1.0'
+    image: 'selenium/node-firefox:3.4.0'
     depends_on:
       - 'grid-hub'
     environment:
@@ -22,7 +22,7 @@ services:
       - HUB_PORT_4444_TCP_PORT=4444
       - no_proxy=""
   node-chrome-debug:
-    image: 'selenium/node-chrome-debug:3.1.0'
+    image: 'selenium/node-chrome-debug:3.4.0'
     depends_on:
       - 'grid-hub'
     environment:
@@ -32,7 +32,7 @@ services:
     ports:
       - '5900:5900'
   node-firefox-debug:
-    image: 'selenium/node-firefox-debug:3.1.0'
+    image: 'selenium/node-firefox-debug:3.4.0'
     depends_on:
       - 'grid-hub'
     environment:
