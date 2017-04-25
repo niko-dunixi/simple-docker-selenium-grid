@@ -2,8 +2,7 @@
 set -e
 # Stop and clean up old stuff before proceeding
 time (
-  docker-compose stop;
-  docker-compose rm -f;
+  ./halt-grid.sh
 )
 time docker-compose up -d #--build
 echo ""
